@@ -1,7 +1,7 @@
 .MouseSelection {
   position: absolute;
   border: 1px dashed #333;
-  background: rgba(252, 232, 151, 1);
+  background: #bdbdbd;
   mix-blend-mode: multiply;
 }
 /* Internet Explorer support method */
