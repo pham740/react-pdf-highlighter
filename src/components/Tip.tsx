@@ -1,15 +1,17 @@
 import React, { Component } from "react";
+import { Classes, Menu, MenuDivider } from "@blueprintjs/core";
+import { MenuItem2 } from "@blueprintjs/popover2";
+
+import { SentenceInfo, SeverityScoreColor } from "../types";
+import { SeverityScoreItem } from "./SeverityScoreItem";
 
 import "../style/Tip.css";
 
 interface State {
   compact: boolean;
-  text: string;
-  emoji: string;
 }
-
 interface Props {
-  onConfirm: (comment: { text: string; emoji: string }) => void;
+  onConfirm: (sentence_info: SentenceInfo) => void;
   onOpen: () => void;
   onUpdate?: () => void;
 }
@@ -17,8 +19,6 @@ interface Props {
 export class Tip extends Component<Props, State> {
   state: State = {
     compact: true,
-    text: "",
-    emoji: "",
   };
 
   // for TipContainer
@@ -32,65 +32,41 @@ export class Tip extends Component<Props, State> {
 
   render() {
     const { onConfirm, onOpen } = this.props;
-    const { compact, text, emoji } = this.state;
 
     return (
-      <div className="Tip">
-        {compact ? (
-          <div
-            className="Tip__compact"
-            onClick={() => {
-              onOpen();
-              this.setState({ compact: false });
-            }}
-          >
-            Add highlight
-          </div>
-        ) : (
-          <form
-            className="Tip__card"
-            onSubmit={(event) => {
-              event.preventDefault();
-              onConfirm({ text, emoji });
-            }}
-          >
-            <div>
-              <textarea
-                placeholder="Your comment"
-                autoFocus
-                value={text}
-                onChange={(event) =>
-                  this.setState({ text: event.target.value })
-                }
-                ref={(node) => {
-                  if (node) {
-                    node.focus();
-                  }
-                }}
+      <Menu className={Classes.ELEVATION_3}>
+        <MenuItem2
+          icon="highlight"
+          text="Add highlight"
+          onClick={() => {
+            // onOpen();
+            this.setState({ compact: false });
+          }}
+          children={
+            <>
+              <MenuDivider title="Select severity score" />
+              <SeverityScoreItem
+                color={SeverityScoreColor.LOW}
+                text="Low"
+                onOpen={onOpen}
+                onConfirm={onConfirm}
               />
-              <div>
-                {["💩", "😱", "😍", "🔥", "😳", "⚠️"].map((_emoji) => (
-                  <label key={_emoji}>
-                    <input
-                      checked={emoji === _emoji}
-                      type="radio"
-                      name="emoji"
-                      value={_emoji}
-                      onChange={(event) =>
-                        this.setState({ emoji: event.target.value })
-                      }
-                    />
-                    {_emoji}
-                  </label>
-                ))}
-              </div>
-            </div>
-            <div>
-              <input type="submit" value="Save" />
-            </div>
-          </form>
-        )}
-      </div>
+              <SeverityScoreItem
+                color={SeverityScoreColor.MID}
+                text="Medium"
+                onOpen={onOpen}
+                onConfirm={onConfirm}
+              />
+              <SeverityScoreItem
+                color={SeverityScoreColor.HIGH}
+                text="High"
+                onOpen={onOpen}
+                onConfirm={onConfirm}
+              />
+            </>
+          }
+        />
+      </Menu>
     );
   }
 }

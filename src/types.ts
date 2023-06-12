@@ -1,3 +1,17 @@
+export enum SeverityScoreColor {
+  LOW = "#00E2F0",
+  MID = "#EDF222",
+  HIGH = "#FF8888",
+  UNSURE = "#BDBDBD",
+}
+
+export enum SeverityScore {
+  LOW = "LOW",
+  MID = "MID",
+  HIGH = "HIGH",
+  UNSURE = "UNSURE",
+}
+
 export interface LTWH {
   left: number;
   top: number;
@@ -44,16 +58,17 @@ export interface HighlightContent {
   content: Content;
 }
 
-export interface Comment {
-  text: string;
-  emoji: string;
+export interface SentenceInfo {
+  model_problematic: boolean;
+  user_problematic: true;
+  severity_score: string;
 }
 
-export interface HighlightComment {
-  comment: Comment;
+export interface HighlightInfo {
+  sentence_info: SentenceInfo;
 }
 
-export interface NewHighlight extends HighlightContent, HighlightComment {
+export interface NewHighlight extends HighlightContent, HighlightInfo {
   position: ScaledPosition;
 }
 
@@ -61,7 +76,7 @@ export interface IHighlight extends NewHighlight {
   id: string;
 }
 
-export interface ViewportHighlight extends HighlightContent, HighlightComment {
+export interface ViewportHighlight extends HighlightContent, HighlightInfo {
   position: Position;
 }
 

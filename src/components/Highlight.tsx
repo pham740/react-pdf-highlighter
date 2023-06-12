@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "../style/Highlight.css";
 
-import type { LTWHP } from "../types.js";
+import { LTWHP, SeverityScore } from "../types.js";
 
 interface Props {
   position: {
@@ -12,9 +12,8 @@ interface Props {
   onClick?: () => void;
   onMouseOver?: () => void;
   onMouseOut?: () => void;
-  comment: {
-    emoji: string;
-    text: string;
+  sentence_info: {
+    severity_score: string;
   };
   isScrolledTo: boolean;
 }
@@ -26,38 +25,42 @@ export class Highlight extends Component<Props> {
       onClick,
       onMouseOver,
       onMouseOut,
-      comment,
+      sentence_info,
       isScrolledTo,
     } = this.props;
 
-    const { rects, boundingRect } = position;
+    const { rects } = position;
+
+    var severity = "";
+    switch (sentence_info.severity_score) {
+      case SeverityScore.LOW:
+        severity = "low";
+        break;
+      case SeverityScore.MID:
+        severity = "mid";
+        break;
+      case SeverityScore.HIGH:
+        severity = "high";
+        break;
+    }
 
     return (
       <div
         className={`Highlight ${isScrolledTo ? "Highlight--scrolledTo" : ""}`}
       >
-        {comment ? (
-          <div
-            className="Highlight__emoji"
-            style={{
-              left: 20,
-              top: boundingRect.top,
-            }}
-          >
-            {comment.emoji}
-          </div>
-        ) : null}
         <div className="Highlight__parts">
-          {rects.map((rect, index) => (
-            <div
-              onMouseOver={onMouseOver}
-              onMouseOut={onMouseOut}
-              onClick={onClick}
-              key={index}
-              style={rect}
-              className={`Highlight__part`}
-            />
-          ))}
+          {rects.map((rect, index) => {
+            return (
+              <div
+                onMouseOver={onMouseOver}
+                onMouseOut={onMouseOut}
+                onClick={onClick}
+                key={index}
+                style={rect}
+                className={`Highlight__${severity}`}
+              />
+            );
+          })}
         </div>
       </div>
     );
