@@ -1,5 +1,119 @@
 export const testHighlights = {
+  "": [
+    {
+      content: {
+        text: "Article 8 Revision With the consent of both parties, this Agreement may be revised through a process of negotiation and discussion in a spirit of cooperation and good will",
+      },
+      position: {
+        usePdfCoordinates: true,
+        boundingRect: {
+          x1: 45.827999114990234,
+          y1: 194.28981018066406,
+          x2: 90.9671859741211,
+          y2: 206.68138122558594,
+          width: 809.9999999999999,
+          height: 1200,
+        },
+        rects: [
+          {
+            x1: 309.9979553222656,
+            y1: 97.0000228881836,
+            x2: 535.429931640625,
+            y2: 113.48802185058594,
+            width: 809.9999999999999,
+            height: 1200,
+          },
+          {
+            x1: 31.190000534057617,
+            y1: 111.18001556396484,
+            x2: 561.4338378906255,
+            y2: 127.66801452636719,
+            width: 809.9999999999999,
+            height: 1200,
+          },
+          {
+            x1: 31.190000534057617,
+            y1: 125.3499984741211,
+            x2: 167.2579803466797,
+            y2: 141.83799743652344,
+            width: 809.9999999999999,
+            height: 1200,
+          },
+        ],
+        pageNumber: 1,
+      },
+      comment: {
+        text: "Actual highlight",
+        emoji: "",
+      },
+      id: "abcdekjfk",
+    },
+  ],
   "https://arxiv.org/pdf/1708.08021.pdf": [
+    {
+      content: {
+        text: "In this paper",
+      },
+      position: {
+        usePdfCoordinates: true,
+        boundingRect: {
+          x1: 45.827999114990234,
+          y1: 194.28981018066406,
+          x2: 90.9671859741211,
+          y2: 206.68138122558594,
+          width: 809.9999999999999,
+          height: 1200,
+        },
+        rects: [
+          {
+            x1: 45.827999114990234,
+            y1: 194.28981018066406,
+            x2: 90.9671859741211,
+            y2: 206.68138122558594,
+            width: 809.9999999999999,
+            height: 1200,
+          },
+        ],
+        pageNumber: 1,
+      },
+      comment: {
+        text: "FIIIIIIRST",
+        emoji: "",
+      },
+      id: "abcdekjfk",
+    },
+    {
+      content: {
+        text: "In this paper",
+      },
+      position: {
+        usePdfCoordinates: true,
+        boundingRect: {
+          x1: 45.827999114990234,
+          y1: 531.1350708007812,
+          x2: 95.35747528076172,
+          y2: 544.9033813476562,
+          width: 809.9999999999999,
+          height: 1200,
+        },
+        rects: [
+          {
+            x1: 45.827999114990234,
+            y1: 531.1350708007812,
+            x2: 95.35747528076172,
+            y2: 544.9033813476562,
+            width: 809.9999999999999,
+            height: 1200,
+          },
+        ],
+        pageNumber: 1,
+      },
+      comment: {
+        text: "2NDDDDDDDD HIGHLIGHT???",
+        emoji: "",
+      },
+      id: "adkagagdd",
+    },
     {
       content: {
         text: " Type Checking for JavaScript",

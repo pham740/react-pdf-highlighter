@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import {
   PdfLoader,
   PdfHighlighter,
@@ -7,8 +6,8 @@ import {
   Highlight,
   Popup,
   AreaHighlight,
+  HighlightPopup,
 } from "./react-pdf-highlighter";
-
 import type { IHighlight, NewHighlight } from "./react-pdf-highlighter";
 
 import { testHighlights as _testHighlights } from "./test-highlights";
@@ -32,17 +31,6 @@ const parseIdFromHash = () =>
 const resetHash = () => {
   document.location.hash = "";
 };
-
-const HighlightPopup = ({
-  comment,
-}: {
-  comment: { text: string; emoji: string };
-}) =>
-  comment.text ? (
-    <div className="Highlight__popup">
-      {comment.emoji} {comment.text}
-    </div>
-  ) : null;
 
 const PRIMARY_PDF_URL = "https://arxiv.org/pdf/1708.08021.pdf";
 const SECONDARY_PDF_URL = "https://arxiv.org/pdf/1604.02480.pdf";
@@ -93,23 +81,27 @@ class App extends Component<{}, State> {
     );
   }
 
-  getHighlightById(id: string) {
+  getHighlightById = (id: string) => {
     const { highlights } = this.state;
-
     return highlights.find((highlight) => highlight.id === id);
-  }
+  };
 
-  addHighlight(highlight: NewHighlight) {
+  addHighlight = (highlight: NewHighlight) => {
     const { highlights } = this.state;
 
     console.log("Saving highlight", highlight);
 
     this.setState({
-      highlights: [{ ...highlight, id: getNextId() }, ...highlights],
+      highlights: [...highlights, { ...highlight, id: getNextId() }],
     });
-  }
+    console.log(this.state);
+  };
 
-  updateHighlight(highlightId: string, position: Object, content: Object) {
+  updateHighlight = (
+    highlightId: string,
+    position: Object,
+    content: Object
+  ) => {
     console.log("Updating highlight", highlightId, position, content);
 
     this.setState({
@@ -130,7 +122,17 @@ class App extends Component<{}, State> {
           : h;
       }),
     });
-  }
+  };
+
+  deleteHighlight = (highlightId: string) => {
+    console.log("Deleting highlight ", highlightId);
+
+    this.setState({
+      highlights: this.state.highlights.filter((highlight) => {
+        return highlight.id !== highlightId;
+      }),
+    });
+  };
 
   render() {
     const { url, highlights } = this.state;
@@ -169,8 +171,8 @@ class App extends Component<{}, State> {
                 ) => (
                   <Tip
                     onOpen={transformSelection}
-                    onConfirm={(comment) => {
-                      this.addHighlight({ content, position, comment });
+                    onConfirm={(sentence_info) => {
+                      this.addHighlight({ content, position, sentence_info });
 
                       hideTipAndSelection();
                     }}
@@ -193,7 +195,7 @@ class App extends Component<{}, State> {
                     <Highlight
                       isScrolledTo={isScrolledTo}
                       position={highlight.position}
-                      comment={highlight.comment}
+                      sentence_info={highlight.sentence_info}
                     />
                   ) : (
                     <AreaHighlight
@@ -211,7 +213,12 @@ class App extends Component<{}, State> {
 
                   return (
                     <Popup
-                      popupContent={<HighlightPopup {...highlight} />}
+                      popupContent={
+                        <HighlightPopup
+                          id={highlight.id}
+                          onClick={this.deleteHighlight}
+                        />
+                      }
                       onMouseOver={(popupContent) =>
                         setTip(highlight, (highlight) => popupContent)
                       }
