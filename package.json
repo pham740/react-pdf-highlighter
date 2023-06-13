@@ -1,12 +1,9 @@
 {
-  "name": "@pham740/react-pdf-highlighter",
-  "version": "5.7.0",
+  "name": "@phamd7/react-pdf-highlighter",
+  "version": "5.7.1",
   "description": "Set of React components for PDF annotation",
   "author": "Di Pham <dipham99@gmail.com>",
   "license": "MIT",
-  "publishConfig": {
-    "@pham740:registry": "https://npm.pkg.github.com"
-  },
   "keywords": [
     "pdf",
     "highlight",
@@ -48,7 +45,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/agentcooper/react-pdf-highlighter.git"
+    "url": "git+https://github.com/pham740/react-pdf-highlighter.git"
   },
   "bugs": {
     "url": "https://github.com/agentcooper/react-pdf-highlighter/issues"
