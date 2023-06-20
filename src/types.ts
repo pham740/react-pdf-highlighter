@@ -1,8 +1,8 @@
-export enum SeverityScoreColor {
-  LOW = "#00E2F0",
-  MID = "#EDF222",
-  HIGH = "#FF8888",
-  UNSURE = "#BDBDBD",
+export enum UserProblematic {
+  YES = "YES",
+  NO = "NO",
+  UNSURE = "UNSURE",
+  UNREVIEWED = "UNREVIEWED",
 }
 
 export enum SeverityScore {
@@ -10,6 +10,14 @@ export enum SeverityScore {
   MID = "MID",
   HIGH = "HIGH",
   UNSURE = "UNSURE",
+  UNREVIEWED = "UNREVIEWED",
+}
+
+export enum SeverityScoreColor {
+  LOW = "#00E2F0",
+  MID = "#EDF222",
+  HIGH = "#FF8888",
+  UNSURE = "#BDBDBD",
 }
 
 export interface LTWH {
@@ -58,14 +66,14 @@ export interface HighlightContent {
   content: Content;
 }
 
-export interface SentenceInfo {
+export interface Info {
   model_problematic: boolean;
-  user_problematic: true;
+  user_problematic: UserProblematic;
   severity_score: string;
 }
 
 export interface HighlightInfo {
-  sentence_info: SentenceInfo;
+  info: Info;
 }
 
 export interface NewHighlight extends HighlightContent, HighlightInfo {

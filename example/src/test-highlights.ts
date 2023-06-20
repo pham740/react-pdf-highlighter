@@ -1,54 +1,6 @@
+import { UserProblematic, SeverityScore } from "./react-pdf-highlighter";
+
 export const testHighlights = {
-  "": [
-    {
-      content: {
-        text: "Article 8 Revision With the consent of both parties, this Agreement may be revised through a process of negotiation and discussion in a spirit of cooperation and good will",
-      },
-      position: {
-        usePdfCoordinates: true,
-        boundingRect: {
-          x1: 45.827999114990234,
-          y1: 194.28981018066406,
-          x2: 90.9671859741211,
-          y2: 206.68138122558594,
-          width: 809.9999999999999,
-          height: 1200,
-        },
-        rects: [
-          {
-            x1: 309.9979553222656,
-            y1: 97.0000228881836,
-            x2: 535.429931640625,
-            y2: 113.48802185058594,
-            width: 809.9999999999999,
-            height: 1200,
-          },
-          {
-            x1: 31.190000534057617,
-            y1: 111.18001556396484,
-            x2: 561.4338378906255,
-            y2: 127.66801452636719,
-            width: 809.9999999999999,
-            height: 1200,
-          },
-          {
-            x1: 31.190000534057617,
-            y1: 125.3499984741211,
-            x2: 167.2579803466797,
-            y2: 141.83799743652344,
-            width: 809.9999999999999,
-            height: 1200,
-          },
-        ],
-        pageNumber: 1,
-      },
-      comment: {
-        text: "Actual highlight",
-        emoji: "",
-      },
-      id: "abcdekjfk",
-    },
-  ],
   "https://arxiv.org/pdf/1708.08021.pdf": [
     {
       content: {
@@ -76,9 +28,10 @@ export const testHighlights = {
         ],
         pageNumber: 1,
       },
-      comment: {
-        text: "FIIIIIIRST",
-        emoji: "",
+      info: {
+        model_problematic: false,
+        user_problematic: UserProblematic.YES,
+        severity_score: SeverityScore.LOW,
       },
       id: "abcdekjfk",
     },
@@ -108,9 +61,10 @@ export const testHighlights = {
         ],
         pageNumber: 1,
       },
-      comment: {
-        text: "2NDDDDDDDD HIGHLIGHT???",
-        emoji: "",
+      info: {
+        model_problematic: false,
+        user_problematic: UserProblematic.YES,
+        severity_score: SeverityScore.MID,
       },
       id: "adkagagdd",
     },
@@ -139,9 +93,10 @@ export const testHighlights = {
         ],
         pageNumber: 1,
       },
-      comment: {
-        text: "Flow or TypeScript?",
-        emoji: "🔥",
+      info: {
+        model_problematic: false,
+        user_problematic: UserProblematic.YES,
+        severity_score: SeverityScore.HIGH,
       },
       id: "8245652131754351",
     },
@@ -170,9 +125,10 @@ export const testHighlights = {
         ],
         pageNumber: 1,
       },
-      comment: {
-        text: "impressive",
-        emoji: "",
+      info: {
+        model_problematic: false,
+        user_problematic: UserProblematic.YES,
+        severity_score: SeverityScore.MID,
       },
       id: "812807243318874",
     },
@@ -212,9 +168,10 @@ export const testHighlights = {
         ],
         pageNumber: 1,
       },
-      comment: {
-        text: "immersive coding experience!",
-        emoji: "",
+      info: {
+        model_problematic: false,
+        user_problematic: UserProblematic.YES,
+        severity_score: SeverityScore.LOW,
       },
       id: "2599712881412761",
     },
@@ -236,9 +193,10 @@ export const testHighlights = {
         rects: [],
         pageNumber: 3,
       },
-      comment: {
-        text: "lisp!",
-        emoji: "😱",
+      info: {
+        model_problematic: false,
+        user_problematic: UserProblematic.YES,
+        severity_score: SeverityScore.LOW,
       },
       id: "9120567402727258",
     },
@@ -278,9 +236,10 @@ export const testHighlights = {
         ],
         pageNumber: 4,
       },
-      comment: {
-        text: "",
-        emoji: "",
+      info: {
+        model_problematic: false,
+        user_problematic: UserProblematic.YES,
+        severity_score: SeverityScore.HIGH,
       },
       id: "32839601376722394",
     },
@@ -302,15 +261,15 @@ export const testHighlights = {
         rects: [],
         pageNumber: 24,
       },
-      comment: {
-        text: "",
-        emoji: "",
+      info: {
+        model_problematic: false,
+        user_problematic: UserProblematic.YES,
+        severity_score: SeverityScore.MID,
       },
       id: "46570518065661615",
     },
     {
       id: "46570518065661616",
-      comment: { text: "Fast type checking?!?!", emoji: "😱" },
       content: {
         text: "Fast type checking.The key toFlow’s speed is modularity: the ability to break the analysis intofile-sized chunks that can be assembled later. Fortunately, JavaScript is already written using files4Avik Chaudhuri, Panagiotis Vekris, Sam Goldman, Marshall Roch, and Gabriel Levias modules, so we modularize our analysis simply by asking that modules have explicitly typedsignatures. (We still infer types for the vast majority of code “local” to modules.) Coincidentally,developers consider this good software engineering practice anyway.",
       },
@@ -391,6 +350,11 @@ export const testHighlights = {
         ],
         pageNumber: 3,
       },
+      info: {
+        model_problematic: false,
+        user_problematic: UserProblematic.YES,
+        severity_score: SeverityScore.LOW,
+      },
     },
   ],
   "https://arxiv.org/pdf/1604.02480.pdf": [
@@ -421,9 +385,10 @@ export const testHighlights = {
         ],
         pageNumber: 1,
       },
-      comment: {
-        text: "Static Single Assignment",
-        emoji: "😎",
+      info: {
+        model_problematic: false,
+        user_problematic: UserProblematic.YES,
+        severity_score: SeverityScore.HIGH,
       },
       id: "29668244118038056",
     },

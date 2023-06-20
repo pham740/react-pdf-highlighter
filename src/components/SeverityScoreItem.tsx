@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { MenuItem2 } from "@blueprintjs/popover2";
 
-import { SentenceInfo, SeverityScore } from "../types";
+import { Info, UserProblematic } from "../types";
 
 import "../style/SeverityScoreItem.css";
 
@@ -9,7 +9,7 @@ interface Props {
   color: string;
   text: string;
   onOpen: () => void;
-  onConfirm: (sentence_info: SentenceInfo) => void;
+  onConfirm: (info: Info) => void;
 }
 
 export class SeverityScoreItem extends Component<Props> {
@@ -18,24 +18,11 @@ export class SeverityScoreItem extends Component<Props> {
 
     event.preventDefault();
 
-    let severity_score = "";
-    switch (event.target.innerText) {
-      case "Low":
-        severity_score = SeverityScore.LOW;
-        break;
-      case "Medium":
-        severity_score = SeverityScore.MID;
-        break;
-      case "High":
-        severity_score = SeverityScore.HIGH;
-        break;
-    }
-
     onOpen();
     onConfirm({
       model_problematic: false,
-      user_problematic: true,
-      severity_score: severity_score,
+      user_problematic: UserProblematic.YES,
+      severity_score: String(event.target.innerText).toUpperCase(),
     });
   };
 

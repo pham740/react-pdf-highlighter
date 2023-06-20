@@ -45,7 +45,7 @@ export function Sidebar({
             }}
           >
             <div>
-              <strong>{highlight.sentence_info.severity_score}</strong>
+              <strong>{highlight.info.severity_score}</strong>
               {highlight.content.text ? (
                 <blockquote style={{ marginTop: "0.5rem" }}>
                   {`${highlight.content.text.slice(0, 90).trim()}…`}

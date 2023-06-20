@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Classes, Menu, MenuDivider } from "@blueprintjs/core";
 import { MenuItem2 } from "@blueprintjs/popover2";
 
-import { SentenceInfo, SeverityScoreColor } from "../types";
+import { Info, SeverityScoreColor } from "../types";
 import { SeverityScoreItem } from "./SeverityScoreItem";
 
 import "../style/Tip.css";
@@ -11,7 +11,7 @@ interface State {
   compact: boolean;
 }
 interface Props {
-  onConfirm: (sentence_info: SentenceInfo) => void;
+  onConfirm: (info: Info) => void;
   onOpen: () => void;
   onUpdate?: () => void;
 }
