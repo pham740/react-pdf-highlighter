@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { MenuItem2 } from "@blueprintjs/popover2";
 
-import { Info, UserProblematic } from "../types";
+import { Info, SeverityScore, UserProblematic } from "../types";
 
 import "../style/SeverityScoreItem.css";
 
@@ -18,11 +18,14 @@ export class SeverityScoreItem extends Component<Props> {
 
     event.preventDefault();
 
+    const severity_score = event.target.innerText.toUpperCase();
+
     onOpen();
     onConfirm({
       model_problematic: false,
       user_problematic: UserProblematic.YES,
-      severity_score: String(event.target.innerText).toUpperCase(),
+      severity_score:
+        SeverityScore[severity_score as keyof typeof SeverityScore],
     });
   };
 

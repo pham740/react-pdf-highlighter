@@ -7,7 +7,7 @@ export enum UserProblematic {
 
 export enum SeverityScore {
   LOW = "LOW",
-  MID = "MID",
+  MEDIUM = "MID",
   HIGH = "HIGH",
   UNSURE = "UNSURE",
   UNREVIEWED = "UNREVIEWED",

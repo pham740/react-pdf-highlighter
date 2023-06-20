@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "../style/Highlight.css";
 
-import { ViewportHighlight, SeverityScore } from "../types.js";
+import { ViewportHighlight } from "../types.js";
 
 interface Props {
   highlight: ViewportHighlight;
@@ -16,27 +16,8 @@ export class Highlight extends Component<Props> {
   render() {
     const { highlight, onClick, onMouseOver, onMouseOut, isScrolledTo } =
       this.props;
-
     const { rects } = highlight.position;
-
-    var severity = "";
-    switch (highlight.info.severity_score) {
-      case SeverityScore.LOW:
-        severity = "low";
-        break;
-      case SeverityScore.MID:
-        severity = "mid";
-        break;
-      case SeverityScore.HIGH:
-        severity = "high";
-        break;
-      case SeverityScore.UNSURE:
-        severity = "unsure";
-        break;
-      case SeverityScore.UNREVIEWED:
-        severity = "unreviewed";
-        break;
-    }
+    const { severity_score } = highlight.info;
 
     return (
       <div
@@ -51,7 +32,7 @@ export class Highlight extends Component<Props> {
                 onClick={onClick}
                 key={index}
                 style={rect}
-                className={`Highlight__${severity}`}
+                className={`Highlight__${severity_score.toLowerCase()}`}
               />
             );
           })}

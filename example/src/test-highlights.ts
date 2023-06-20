@@ -64,7 +64,7 @@ export const testHighlights = {
       info: {
         model_problematic: false,
         user_problematic: UserProblematic.YES,
-        severity_score: SeverityScore.MID,
+        severity_score: SeverityScore.MEDIUM,
       },
       id: "adkagagdd",
     },
@@ -128,7 +128,7 @@ export const testHighlights = {
       info: {
         model_problematic: false,
         user_problematic: UserProblematic.YES,
-        severity_score: SeverityScore.MID,
+        severity_score: SeverityScore.MEDIUM,
       },
       id: "812807243318874",
     },
@@ -264,7 +264,7 @@ export const testHighlights = {
       info: {
         model_problematic: false,
         user_problematic: UserProblematic.YES,
-        severity_score: SeverityScore.MID,
+        severity_score: SeverityScore.MEDIUM,
       },
       id: "46570518065661615",
     },
