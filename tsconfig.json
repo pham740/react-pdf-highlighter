@@ -13,7 +13,8 @@
     "jsx": "react",
     "outDir": "./dist/esm",
     "isolatedModules": true,
-    "declaration": true
+    "declaration": true,
+    "skipLibCheck": true
   },
   "include": ["./src"]
 }
