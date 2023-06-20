@@ -194,8 +194,7 @@ class App extends Component<{}, State> {
                   const component = isTextHighlight ? (
                     <Highlight
                       isScrolledTo={isScrolledTo}
-                      position={highlight.position}
-                      sentence_info={highlight.sentence_info}
+                      highlight={highlight}
                     />
                   ) : (
                     <AreaHighlight

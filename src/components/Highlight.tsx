@@ -2,37 +2,25 @@ import React, { Component } from "react";
 
 import "../style/Highlight.css";
 
-import { LTWHP, SeverityScore } from "../types.js";
+import { ViewportHighlight, SeverityScore } from "../types.js";
 
 interface Props {
-  position: {
-    boundingRect: LTWHP;
-    rects: Array<LTWHP>;
-  };
+  highlight: ViewportHighlight;
   onClick?: () => void;
   onMouseOver?: () => void;
   onMouseOut?: () => void;
-  sentence_info: {
-    severity_score: string;
-  };
   isScrolledTo: boolean;
 }
 
 export class Highlight extends Component<Props> {
   render() {
-    const {
-      position,
-      onClick,
-      onMouseOver,
-      onMouseOut,
-      sentence_info,
-      isScrolledTo,
-    } = this.props;
+    const { highlight, onClick, onMouseOver, onMouseOut, isScrolledTo } =
+      this.props;
 
-    const { rects } = position;
+    const { rects } = highlight.position;
 
     var severity = "";
-    switch (sentence_info.severity_score) {
+    switch (highlight.info.severity_score) {
       case SeverityScore.LOW:
         severity = "low";
         break;
