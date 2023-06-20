@@ -1,6 +1,6 @@
 {
   "name": "@phamd7/react-pdf-highlighter",
-  "version": "5.7.8",
+  "version": "5.7.9",
   "description": "Set of React components for PDF annotation",
   "author": "Di Pham <dipham99@gmail.com>",
   "license": "MIT",
