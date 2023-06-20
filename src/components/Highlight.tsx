@@ -30,6 +30,12 @@ export class Highlight extends Component<Props> {
       case SeverityScore.HIGH:
         severity = "high";
         break;
+      case SeverityScore.UNSURE:
+        severity = "unsure";
+        break;
+      case SeverityScore.UNREVIEWED:
+        severity = "unreviewed";
+        break;
     }
 
     return (
