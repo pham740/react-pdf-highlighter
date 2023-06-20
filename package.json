@@ -1,6 +1,6 @@
 {
   "name": "@phamd7/react-pdf-highlighter",
-  "version": "5.7.1",
+  "version": "5.7.7",
   "description": "Set of React components for PDF annotation",
   "author": "Di Pham <dipham99@gmail.com>",
   "license": "MIT",
@@ -18,7 +18,7 @@
   "module": "./dist/esm/index.js",
   "scripts": {
     "start": "npm run dev",
-    "dev": "(cd ./example && vite)",
+    "dev": "(cd ./example && vite --port 8000)",
     "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:copy-styles && npm run build:example",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir ./dist/cjs",
