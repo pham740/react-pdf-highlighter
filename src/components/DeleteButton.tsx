@@ -6,7 +6,7 @@ interface Props {
   onClick: (id: string) => void;
 }
 
-export class HighlightPopup extends Component<Props> {
+export class DeleteButton extends Component<Props> {
   render() {
     const { id, onClick } = this.props;
 
@@ -14,7 +14,7 @@ export class HighlightPopup extends Component<Props> {
       <Button
         key={id}
         icon="cross"
-        text="Delete?"
+        text="Delete"
         intent={Intent.DANGER}
         onClick={() => onClick(id)}
       />
@@ -22,4 +22,4 @@ export class HighlightPopup extends Component<Props> {
   }
 }
 
-export default HighlightPopup;
+export default DeleteButton;

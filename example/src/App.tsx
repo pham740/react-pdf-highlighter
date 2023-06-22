@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import {
+  DeleteButton,
+  GoButton,
   PdfLoader,
   PdfHighlighter,
   Tip,
   Highlight,
   Popup,
   AreaHighlight,
-  HighlightPopup,
 } from "./react-pdf-highlighter";
 import type { IHighlight, NewHighlight } from "./react-pdf-highlighter";
 
@@ -213,10 +214,18 @@ class App extends Component<{}, State> {
                   return (
                     <Popup
                       popupContent={
-                        <HighlightPopup
-                          id={highlight.id}
-                          onClick={this.deleteHighlight}
-                        />
+                        <div>
+                          <DeleteButton
+                            id={highlight.id}
+                            onClick={this.deleteHighlight}
+                          />
+                          <GoButton
+                            id={highlight.id}
+                            onClick={() => {
+                              console.log("Going");
+                            }}
+                          />
+                        </div>
                       }
                       onMouseOver={(popupContent) =>
                         setTip(highlight, (highlight) => popupContent)

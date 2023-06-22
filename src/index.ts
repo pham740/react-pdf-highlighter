@@ -1,7 +1,8 @@
 export { PdfHighlighter } from "./components/PdfHighlighter";
 export { Tip } from "./components/Tip";
 export { Highlight } from "./components/Highlight";
-export { HighlightPopup } from "./components/HighlightPopup";
+export { DeleteButton } from "./components/DeleteButton";
+export { GoButton } from "./components/GoButton";
 export { Popup } from "./components/Popup";
 export { AreaHighlight } from "./components/AreaHighlight";
 export { PdfLoader } from "./components/PdfLoader";
