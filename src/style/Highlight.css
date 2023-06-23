@@ -17,35 +17,59 @@
   cursor: pointer;
   position: absolute;
   background: #00e2f0;
-  /* transition: background 0.5s; */
+}
+
+.Highlight__low__active {
+  cursor: pointer;
+  position: absolute;
+  background: #00b5c2;
 }
 
 .Highlight__mid {
   cursor: pointer;
   position: absolute;
-  background: #edf222;
-  /* transition: background 0.5s; */
+  background: #ffe53d;
+}
+
+.Highlight__mid__active {
+  cursor: pointer;
+  position: absolute;
+  background: #c2ae2b;
 }
 
 .Highlight__high {
   cursor: pointer;
   position: absolute;
   background: #ff8888;
-  /* transition: background 0.5s; */
+}
+
+.Highlight__high__active {
+  cursor: pointer;
+  position: absolute;
+  background: #bf6565;
 }
 
 .Highlight__unsure {
   cursor: pointer;
   position: absolute;
   background: #bdbdbd;
-  /* transition: background 0.5s; */
+}
+
+.Highlight__unsure__active {
+  cursor: pointer;
+  position: absolute;
+  background: #737373;
 }
 
 .Highlight__unreviewed {
   cursor: pointer;
   position: absolute;
   background: #bdbdbd;
-  /* transition: background 0.5s; */
+}
+
+.Highlight__unreviewed__active {
+  position: absolute;
+  background: #737373;
 }
 
 .Highlight__popup {

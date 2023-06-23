@@ -64,6 +64,7 @@ export interface Content {
 
 export interface HighlightContent {
   content: Content;
+  isActive: boolean;
 }
 
 export interface Info {

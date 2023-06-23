@@ -18,6 +18,7 @@ export class Highlight extends Component<Props> {
       this.props;
     const { rects } = highlight.position;
     const { severity_score } = highlight.info;
+    const { isActive } = highlight;
 
     return (
       <div
@@ -32,7 +33,9 @@ export class Highlight extends Component<Props> {
                 onClick={onClick}
                 key={index}
                 style={rect}
-                className={`Highlight__${severity_score.toLowerCase()}`}
+                className={`Highlight__${severity_score.toLowerCase()}${
+                  isActive ? "__active" : ""
+                }`}
               />
             );
           })}
