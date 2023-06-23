@@ -13,61 +13,61 @@
   opacity: 1;
 }
 
-.Highlight__low {
+.Highlight__low__active {
   cursor: pointer;
   position: absolute;
   background: #00e2f0;
 }
 
-.Highlight__low__active {
+.Highlight__low {
   cursor: pointer;
   position: absolute;
   background: #00b5c2;
 }
 
-.Highlight__mid {
+.Highlight__mid__active {
   cursor: pointer;
   position: absolute;
   background: #ffe53d;
 }
 
-.Highlight__mid__active {
+.Highlight__mid {
   cursor: pointer;
   position: absolute;
   background: #c2ae2b;
 }
 
-.Highlight__high {
+.Highlight__high__active {
   cursor: pointer;
   position: absolute;
   background: #ff8888;
 }
 
-.Highlight__high__active {
+.Highlight__high {
   cursor: pointer;
   position: absolute;
   background: #bf6565;
 }
 
-.Highlight__unsure {
+.Highlight__unsure__active {
   cursor: pointer;
   position: absolute;
   background: #bdbdbd;
 }
 
-.Highlight__unsure__active {
+.Highlight__unsure {
   cursor: pointer;
   position: absolute;
   background: #737373;
 }
 
-.Highlight__unreviewed {
+.Highlight__unreviewed__active {
   cursor: pointer;
   position: absolute;
   background: #bdbdbd;
 }
 
-.Highlight__unreviewed__active {
+.Highlight__unreviewed {
   position: absolute;
   background: #737373;
 }
