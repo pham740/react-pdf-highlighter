@@ -36,6 +36,7 @@ import { getAreaAsPNG, getAreaAsPngWithContext } from "../lib/get-area-as-png";
 import getBoundingRect from "../lib/get-bounding-rect";
 import getClientRects from "../lib/get-client-rects";
 import { HighlightLayer } from "./HighlightLayer";
+import { addMissingSpacesToSelection } from "../lib/selection-range-utils";
 
 export type T_ViewportHighlight<T_HT> = { position: Position } & T_HT;
 
@@ -512,7 +513,7 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
     };
 
     const content = {
-      text: range.toString(),
+      text: addMissingSpacesToSelection(range) || range.toString(),
     };
     const scaledPosition = this.viewportPositionToScaled(viewportPosition);
 

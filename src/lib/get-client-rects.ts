@@ -1,4 +1,5 @@
 import type { LTWHP, Page } from "../types.js";
+import { getClientRectsInRange } from "./selection-range-utils.js";
 
 import optimizeClientRects from "./optimize-client-rects";
 
@@ -24,7 +25,7 @@ const getClientRects = (
   pages: Page[],
   shouldOptimize: boolean = true
 ): Array<LTWHP> => {
-  const clientRects = Array.from(range.getClientRects());
+  const clientRects = getClientRectsInRange(range);
 
   const rects: LTWHP[] = [];
 
