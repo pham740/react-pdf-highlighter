@@ -663,7 +663,7 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
         const highlightLayer = this.findOrCreateHighlightLayer(pageNumber);
         if (highlightLayer) {
           const root = createRoot(highlightLayer!);
-          this.highlightReactRoots[pageNumber] = root;
+          // this.highlightReactRoots[pageNumber] = root;
           this.renderHighlightLayer(root, pageNumber);
         }
       }

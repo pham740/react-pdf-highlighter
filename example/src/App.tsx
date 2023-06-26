@@ -201,6 +201,7 @@ class App extends Component<{}, State> {
                     <Highlight
                       isScrolledTo={isScrolledTo}
                       highlight={highlight}
+                      onClick={() => console.log("highlight clicked")}
                     />
                   ) : (
                     <AreaHighlight
