@@ -69,6 +69,7 @@ export interface HighlightContent {
 }
 
 export interface Info {
+  user_defined?: boolean;
   model_problematic: boolean;
   user_problematic: UserProblematic;
   severity_score: string;
@@ -84,6 +85,7 @@ export interface NewHighlight extends HighlightContent, HighlightInfo {
 
 export interface IHighlight extends NewHighlight {
   id: string;
+  page_id?: string;
 }
 
 export interface ViewportHighlight extends HighlightContent, HighlightInfo {
