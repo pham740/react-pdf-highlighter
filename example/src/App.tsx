@@ -177,7 +177,7 @@ class App extends Component<{}, State> {
                         content,
                         position,
                         info,
-                        isActive: false,
+                        isActive: true,
                       });
 
                       hideTipAndSelection();

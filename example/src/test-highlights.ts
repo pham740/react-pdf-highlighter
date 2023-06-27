@@ -29,6 +29,7 @@ export const testHighlights = {
         pageNumber: 1,
       },
       info: {
+        user_defined: false,
         model_problematic: false,
         user_problematic: UserProblematic.YES,
         severity_score: SeverityScore.LOW,
@@ -63,6 +64,7 @@ export const testHighlights = {
         pageNumber: 1,
       },
       info: {
+        user_defined: false,
         model_problematic: false,
         user_problematic: UserProblematic.YES,
         severity_score: SeverityScore.MEDIUM,
@@ -96,12 +98,13 @@ export const testHighlights = {
         pageNumber: 1,
       },
       info: {
+        user_defined: false,
         model_problematic: false,
         user_problematic: UserProblematic.YES,
         severity_score: SeverityScore.HIGH,
       },
       id: "8245652131754351",
-      isActive: true,
+      isActive: false,
     },
     {
       content: {
@@ -129,6 +132,7 @@ export const testHighlights = {
         pageNumber: 1,
       },
       info: {
+        user_defined: false,
         model_problematic: false,
         user_problematic: UserProblematic.YES,
         severity_score: SeverityScore.MEDIUM,
@@ -173,6 +177,7 @@ export const testHighlights = {
         pageNumber: 1,
       },
       info: {
+        user_defined: false,
         model_problematic: false,
         user_problematic: UserProblematic.YES,
         severity_score: SeverityScore.LOW,
@@ -199,6 +204,7 @@ export const testHighlights = {
         pageNumber: 3,
       },
       info: {
+        user_defined: false,
         model_problematic: false,
         user_problematic: UserProblematic.YES,
         severity_score: SeverityScore.LOW,
@@ -243,6 +249,7 @@ export const testHighlights = {
         pageNumber: 4,
       },
       info: {
+        user_defined: false,
         model_problematic: false,
         user_problematic: UserProblematic.YES,
         severity_score: SeverityScore.HIGH,
@@ -269,6 +276,7 @@ export const testHighlights = {
         pageNumber: 24,
       },
       info: {
+        user_defined: false,
         model_problematic: false,
         user_problematic: UserProblematic.YES,
         severity_score: SeverityScore.MEDIUM,
@@ -358,6 +366,7 @@ export const testHighlights = {
         pageNumber: 3,
       },
       info: {
+        user_defined: false,
         model_problematic: false,
         user_problematic: UserProblematic.YES,
         severity_score: SeverityScore.LOW,
@@ -395,6 +404,7 @@ export const testHighlights = {
         pageNumber: 1,
       },
       info: {
+        user_defined: false,
         model_problematic: false,
         user_problematic: UserProblematic.YES,
         severity_score: SeverityScore.HIGH,
