@@ -22,7 +22,7 @@
 .Highlight__low {
   cursor: pointer;
   position: absolute;
-  background: #00b5c2;
+  background: #008791;
 }
 
 .Highlight__mid__active {
@@ -34,7 +34,7 @@
 .Highlight__mid {
   cursor: pointer;
   position: absolute;
-  background: #c2ae2b;
+  background: #9a8921;
 }
 
 .Highlight__high__active {
@@ -46,7 +46,7 @@
 .Highlight__high {
   cursor: pointer;
   position: absolute;
-  background: #bf6565;
+  background: #924d4d;
 }
 
 .Highlight__unsure__active {
