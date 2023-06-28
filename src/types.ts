@@ -15,9 +15,10 @@ export enum SeverityScore {
 
 export enum SeverityScoreColor {
   LOW = "#00E2F0",
-  MID = "#EDF222",
+  MID = "#FFE53D",
   HIGH = "#FF8888",
   UNSURE = "#BDBDBD",
+  UNREVIEWED = "#BDBDBD",
 }
 
 export interface LTWH {
