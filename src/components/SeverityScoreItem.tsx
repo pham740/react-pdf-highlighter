@@ -36,6 +36,8 @@ export class SeverityScoreItem extends Component<Props> {
       <MenuItem2
         key={text}
         onClick={(event) => this.handleClick(event)}
+        popoverProps={{ usePortal: true }}
+        shouldDismissPopover={true}
         text={
           <div>
             <span aria-hidden="true" className="SeverityScore__span bp4-icon">
