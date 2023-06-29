@@ -48,6 +48,33 @@ const pdfToViewport = (pdf: Scaled, viewport: Viewport): LTWHP => {
   };
 };
 
+const ltwhpToViewportRect = (ltwhp: LTWHP, viewport: Viewport) => {
+  return {
+    x1: ltwhp.left,
+    y1: viewport.height - ltwhp.top,
+    x2: ltwhp.width + ltwhp.left,
+    y2: viewport.height - ltwhp.top - ltwhp.height,
+    pageNumber: ltwhp.pageNumber,
+  };
+};
+
+export const viewportToPdf = (ltwhp: LTWHP, viewport: Viewport): Scaled => {
+  const rect = ltwhpToViewportRect(ltwhp, viewport);
+
+  const [x1, y1] = viewport.convertToPdfPoint(rect.x1, rect.y1);
+  const [x2, y2] = viewport.convertToPdfPoint(rect.x2, rect.y2);
+
+  return {
+    x1: x1,
+    y1: y1,
+    x2: x2,
+    y2: y2,
+    width: viewport.width,
+    height: viewport.height,
+    pageNumber: ltwhp.pageNumber,
+  };
+};
+
 export const scaledToViewport = (
   scaled: Scaled,
   viewport: Viewport,

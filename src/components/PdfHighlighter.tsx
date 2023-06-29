@@ -28,7 +28,11 @@ import {
   getWindow,
   isHTMLElement,
 } from "../lib/pdfjs-dom";
-import { scaledToViewport, viewportToScaled } from "../lib/coordinates";
+import {
+  scaledToViewport,
+  viewportToScaled,
+  viewportToPdf,
+} from "../lib/coordinates";
 import MouseSelection from "./MouseSelection";
 import type { PDFDocumentProxy } from "pdfjs-dist";
 import TipContainer from "./TipContainer";
@@ -302,6 +306,21 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
     };
   }
 
+  viewportPositionToPdf({
+    pageNumber,
+    boundingRect,
+    rects,
+  }: Position): ScaledPosition {
+    const viewport = this.viewer.getPageView(pageNumber - 1).viewport;
+
+    return {
+      boundingRect: viewportToPdf(boundingRect, viewport),
+      rects: (rects || []).map((rect) => viewportToPdf(rect, viewport)),
+      pageNumber,
+      usePdfCoordinates: true,
+    };
+  }
+
   screenshot(position: LTWH, pageNumber: number, contextPosition?: LTWH) {
     const canvas = this.viewer.getPageView(pageNumber - 1).canvas;
     return contextPosition == null
@@ -516,11 +535,12 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
       text: addMissingSpacesToSelection(range) || range.toString(),
     };
     const scaledPosition = this.viewportPositionToScaled(viewportPosition);
+    const pdfPosition = this.viewportPositionToPdf(viewportPosition);
 
     this.setTip(
       viewportPosition,
       onSelectionFinished(
-        scaledPosition,
+        pdfPosition,
         content,
         () => this.hideTipAndSelection(),
         () =>
@@ -597,6 +617,8 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
 
                 const scaledPosition =
                   this.viewportPositionToScaled(viewportPosition);
+                const pdfPosition =
+                  this.viewportPositionToPdf(viewportPosition);
 
                 const image = this.screenshot(
                   pageBoundingRect,
@@ -626,7 +648,7 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
                 this.setTip(
                   viewportPosition,
                   onSelectionFinished(
-                    scaledPosition,
+                    pdfPosition,
                     { image, imageWithContext },
                     () => this.hideTipAndSelection(),
                     () => {
