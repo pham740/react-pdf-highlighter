@@ -17,59 +17,69 @@
   cursor: pointer;
   position: absolute;
   background: #00e2f0;
+  transition: background 0.3s;
 }
 
 .Highlight__low {
   cursor: pointer;
   position: absolute;
   background: #008791;
+  transition: background 0.3s;
 }
 
 .Highlight__mid__active {
   cursor: pointer;
   position: absolute;
   background: #ffe53d;
+  transition: background 0.3s;
 }
 
 .Highlight__mid {
   cursor: pointer;
   position: absolute;
   background: #9a8921;
+  transition: background 0.3s;
 }
 
 .Highlight__high__active {
   cursor: pointer;
   position: absolute;
   background: #ff8888;
+  transition: background 0.3s;
 }
 
 .Highlight__high {
   cursor: pointer;
   position: absolute;
   background: #924d4d;
+  transition: background 0.3s;
 }
 
 .Highlight__unsure__active {
   cursor: pointer;
   position: absolute;
   background: #bdbdbd;
+  transition: background 0.3s;
 }
 
 .Highlight__unsure {
   cursor: pointer;
   position: absolute;
   background: #737373;
+  transition: background 0.3s;
 }
 
 .Highlight__unreviewed__active {
   cursor: pointer;
   position: absolute;
   background: #bdbdbd;
+  transition: background 0.3s;
 }
 
 .Highlight__unreviewed {
   position: absolute;
   background: #737373;
+  transition: background 0.3s;
 }
 
 .Highlight__popup {
