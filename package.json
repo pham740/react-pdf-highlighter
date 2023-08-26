@@ -1,8 +1,8 @@
 {
-  "name": "@phamd7/react-pdf-highlighter",
-  "version": "5.7.19",
+  "name": "@pham740/react-pdf-highlighter",
+  "version": "5.7.20",
   "description": "Set of React components for PDF annotation",
-  "author": "Di Pham <dipham99@gmail.com>",
+  "author": "Di Pham <di.pham@pnnl.gov",
   "contributors": [
     {
       "name": "Artem Tyurin",
@@ -17,6 +17,9 @@
       "url": "https://github.com/anttihil"
     }
   ],
+  "publishConfig": {
+    "pham740:react-pdf-highlighter": "https://npm.pkg.github.com"
+  },
   "license": "MIT",
   "keywords": [
     "pdf",
