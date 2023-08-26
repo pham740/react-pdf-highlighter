@@ -1,7 +1,7 @@
 import { isHTMLCanvasElement } from "./pdfjs-dom";
 import type { LTWHP } from "../types.js";
 
-export const getAreaAsPNG = (
+export const getAreaAsPng = (
   canvas: HTMLCanvasElement,
   position: LTWHP,
   extendedRenderer?: (newCanvas: CanvasRenderingContext2D) => void
@@ -49,7 +49,7 @@ export const getAreaAsPngWithContext = (
   contextPosition: LTWHP
 ): string => {
   const pixelRatio: number = window.devicePixelRatio;
-  return getAreaAsPNG(canvas, contextPosition, (newCanvas) => {
+  return getAreaAsPng(canvas, contextPosition, (newCanvas) => {
     newCanvas.globalAlpha = 0.2;
     newCanvas.fillStyle = "#7025B3";
     newCanvas.fillRect(

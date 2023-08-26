@@ -1,6 +1,6 @@
-import React, { PointerEventHandler, PureComponent, RefObject } from "react";
-import { createRoot, Root } from "react-dom/client";
-import debounce from "lodash.debounce";
+import "pdfjs-dist/web/pdf_viewer.css";
+import "../style/pdf_viewer.css";
+import "../style/PdfHighlighter.css";
 
 import {
   EventBus,
@@ -8,10 +8,6 @@ import {
   PDFLinkService,
   PDFViewer,
 } from "pdfjs-dist/legacy/web/pdf_viewer";
-
-import "pdfjs-dist/web/pdf_viewer.css";
-import "../style/pdf_viewer.css";
-import "../style/PdfHighlighter.css";
 import type {
   IHighlight,
   LTWH,
@@ -20,6 +16,7 @@ import type {
   Scaled,
   ScaledPosition,
 } from "../types";
+import React, { PointerEventHandler, PureComponent, RefObject } from "react";
 import {
   asElement,
   findOrCreateContainerLayer,
@@ -36,7 +33,9 @@ import {
 import MouseSelection from "./MouseSelection";
 import type { PDFDocumentProxy } from "pdfjs-dist";
 import TipContainer from "./TipContainer";
-import { getAreaAsPNG, getAreaAsPngWithContext } from "../lib/get-area-as-png";
+import { createRoot, Root } from "react-dom/client";
+import debounce from "lodash.debounce";
+import { getAreaAsPng, getAreaAsPngWithContext } from "../lib/get-area-as-png";
 import getBoundingRect from "../lib/get-bounding-rect";
 import getClientRects from "../lib/get-client-rects";
 import { HighlightLayer } from "./HighlightLayer";
@@ -324,7 +323,7 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
   screenshot(position: LTWH, pageNumber: number, contextPosition?: LTWH) {
     const canvas = this.viewer.getPageView(pageNumber - 1).canvas;
     return contextPosition == null
-      ? getAreaAsPNG(canvas, position)
+      ? getAreaAsPng(canvas, position)
       : getAreaAsPngWithContext(canvas, position, contextPosition);
   }
 
@@ -388,7 +387,6 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
   };
 
   onTextLayerRendered = () => {
-    console.log("onTextLayerRendered");
     this.renderHighlightLayers();
   };
 
@@ -437,7 +435,6 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
   };
 
   onSelectionChange = () => {
-    console.log("onSelectionChange");
     const container = this.containerNode;
     const selection = getWindow(container).getSelection();
 
@@ -502,7 +499,6 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
   };
 
   afterSelection = () => {
-    console.log("afterSelection");
     const { onSelectionFinished } = this.props;
 
     const { isCollapsed, range } = this.state;
@@ -686,7 +682,7 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
         const highlightLayer = this.findOrCreateHighlightLayer(pageNumber);
         if (highlightLayer) {
           const root = createRoot(highlightLayer!);
-          // this.highlightReactRoots[pageNumber] = root;
+          this.highlightReactRoots[pageNumber] = root;
           this.renderHighlightLayer(root, pageNumber);
         }
       }
