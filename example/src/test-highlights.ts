@@ -31,8 +31,8 @@ export const testHighlights = {
       info: {
         user_defined: false,
         model_problematic: false,
-        user_problematic: UserProblematic.YES,
-        severity_score: SeverityScore.LOW,
+        user_problematic: UserProblematic.NO,
+        severity_score: SeverityScore.NO,
       },
       id: "abcdekjfk",
       isActive: false,

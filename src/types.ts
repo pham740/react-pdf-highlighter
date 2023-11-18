@@ -9,6 +9,7 @@ export enum SeverityScore {
   LOW = "LOW",
   MEDIUM = "MID",
   HIGH = "HIGH",
+  NO = "NO",
   UNSURE = "UNSURE",
   UNREVIEWED = "UNREVIEWED",
 }
