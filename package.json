@@ -1,6 +1,6 @@
 {
   "name": "@pham740/react-pdf-highlighter",
-  "version": "5.7.22",
+  "version": "5.7.23",
   "description": "Set of React components for PDF annotation",
   "author": "Di Pham <di.pham@pnnl.gov",
   "contributors": [
@@ -9,8 +9,8 @@
       "email": "artem.tyurin@gmail.com"
     },
     {
-    "name": "credolabs",
-    "url": "https://github.com/credolabs"
+      "name": "credolabs",
+      "url": "https://github.com/credolabs"
     },
     {
       "name": "Antti Hiltunen",
@@ -53,6 +53,7 @@
   "dependencies": {
     "@blueprintjs/core": "^4.20.1",
     "@blueprintjs/popover2": "^1.14.9",
+    "@pham740/react-pdf-highlighter": "^5.7.23",
     "@types/lodash.debounce": "^4.0.6",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
