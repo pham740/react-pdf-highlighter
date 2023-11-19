@@ -210,7 +210,7 @@ export const testHighlights = {
         severity_score: SeverityScore.LOW,
       },
       id: "9120567402727258",
-      isActive: true,
+      isActive: false,
     },
     {
       content: {
@@ -372,7 +372,7 @@ export const testHighlights = {
         severity_score: SeverityScore.LOW,
       },
       id: "46570518065661616",
-      isActive: true,
+      isActive: false,
     },
   ],
   "https://arxiv.org/pdf/1604.02480.pdf": [

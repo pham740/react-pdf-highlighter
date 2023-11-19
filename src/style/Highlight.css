@@ -27,6 +27,10 @@
   transition: background 0.3s;
 }
 
+.Highlight__low:hover {
+  background-color: #00e2f0;
+}
+
 .Highlight__mid__active {
   cursor: pointer;
   position: absolute;
@@ -39,6 +43,10 @@
   position: absolute;
   background: #9a8921;
   transition: background 0.3s;
+}
+
+.Highlight__mid:hover {
+  background-color: #ffe53d;
 }
 
 .Highlight__high__active {
@@ -55,6 +63,10 @@
   transition: background 0.3s;
 }
 
+.Highlight__high:hover {
+  background-color: #ff8888;
+}
+
 .Highlight__unsure__active {
   cursor: pointer;
   position: absolute;
@@ -69,6 +81,10 @@
   transition: background 0.3s;
 }
 
+.Highlight__unsure:hover {
+  background-color: #bdbdbd;
+}
+
 .Highlight__unreviewed__active {
   cursor: pointer;
   position: absolute;
@@ -80,6 +96,10 @@
   position: absolute;
   background: #737373;
   transition: background 0.3s;
+}
+
+.Highlight__unreviewed:hover {
+  background-color: #bdbdbd;
 }
 
 .Highlight__popup {
