@@ -1,4 +1,5 @@
 .Highlight {
+  cursor: pointer;
   position: absolute;
 }
 
@@ -10,99 +11,107 @@
 }
 
 .Highlight__parts {
+  cursor: pointer;
   opacity: 1;
 }
 
 .Highlight__low__active {
   cursor: pointer;
   position: absolute;
-  background: #00e2f0;
+  background: #008791;
   transition: background 0.3s;
 }
 
 .Highlight__low {
   cursor: pointer;
   position: absolute;
-  background: #008791;
+  background: #00e2f0;
   transition: background 0.3s;
 }
 
-.Highlight__low:hover {
-  background-color: #00e2f0;
-}
+/* .Highlight__low:hover {
+  cursor: pointer;
+  background: #008791;
+} */
 
 .Highlight__mid__active {
-  cursor: pointer;
-  position: absolute;
-  background: #ffe53d;
-  transition: background 0.3s;
-}
-
-.Highlight__mid {
   cursor: pointer;
   position: absolute;
   background: #9a8921;
   transition: background 0.3s;
 }
 
-.Highlight__mid:hover {
-  background-color: #ffe53d;
-}
-
-.Highlight__high__active {
+.Highlight__mid {
   cursor: pointer;
   position: absolute;
-  background: #ff8888;
+  background: #ffe53d;
   transition: background 0.3s;
 }
 
-.Highlight__high {
+/* .Highlight__mid:hover {
+  cursor: pointer;
+  background: #9a8921;
+} */
+
+.Highlight__high__active {
   cursor: pointer;
   position: absolute;
   background: #924d4d;
   transition: background 0.3s;
 }
 
-.Highlight__high:hover {
-  background-color: #ff8888;
+.Highlight__high {
+  cursor: pointer;
+  position: absolute;
+  background: #ff8888;
+  transition: background 0.3s;
 }
+
+/* .Highlight__high:hover {
+  cursor: pointer;
+  background: #924d4d;
+} */
 
 .Highlight__unsure__active {
   cursor: pointer;
   position: absolute;
-  background: #bdbdbd;
+  background: #737373;
   transition: background 0.3s;
 }
 
 .Highlight__unsure {
   cursor: pointer;
   position: absolute;
+  background: #bdbdbd;
+  transition: background 0.3s;
+}
+
+/* .Highlight__unsure:hover {
+  cursor: pointer;
+  background: #737373;
+} */
+
+.Highlight__unreviewed__active {
+  cursor: pointer;
+  position: absolute;
   background: #737373;
   transition: background 0.3s;
 }
 
-.Highlight__unsure:hover {
-  background-color: #bdbdbd;
-}
-
-.Highlight__unreviewed__active {
+.Highlight__unreviewed {
   cursor: pointer;
   position: absolute;
   background: #bdbdbd;
   transition: background 0.3s;
 }
 
-.Highlight__unreviewed {
-  position: absolute;
+/* .Highlight__unreviewed:hover {
+  cursor: pointer;
   background: #737373;
-  transition: background 0.3s;
-}
-
-.Highlight__unreviewed:hover {
-  background-color: #bdbdbd;
-}
+} */
 
 .Highlight__popup {
+  cursor: pointer;
   background-color: #3d464d;
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: white;
